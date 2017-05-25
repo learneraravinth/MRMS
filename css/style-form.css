@@ -1,0 +1,53 @@
+.first-bg {
+    background: #3D5869;
+    padding: 180px 10px 190px;
+}
+
+.panel {
+    padding: 0;
+    margin: 0;
+}
+
+html {
+    padding: 0;
+    margin: 0;
+}
+
+boddy {
+    padding: 0;
+    margin: 0;
+}
+.bg-secon h1 {
+    color: #fff;
+}
+.bg-secon img {
+    margin: 0 auto;
+    display: block;
+    width: 100px;
+    border-radius: 50%;
+    border: 2px solid #20a8e0;
+    background: #fff;
+    margin-top: 50px;
+    margin-bottom: 61px;
+}
+.bg-form{
+	background:none;
+	border-style: none;
+	box-shadow:none;
+	border-bottom: 1px solid #333;
+	color:#fff;
+	margin-bottom:32px;
+}
+.bg-bt{
+	padding:10px 30px;
+	border-radius: 12px;
+	background:none;
+	border:3px solid #fff;
+	color:#fff;
+}
+.bg-bt:hover{
+	color:#333;
+}
+
+/*---dashboard---*/
+/*---dashboard---*/

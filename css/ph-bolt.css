@@ -1,0 +1,105 @@
+@charset "utf-8";
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700);
+body,html{overflow:hidden;margin:0;padding:0; height: 100%;}
+body, code {font: 400 14px/20px 'Open Sans', sans-serif, Helvetica ; background-color: #f5f5f5; outline: 0; color: #000;}
+b {font-weight: 500;}
+h1, h2, h3, h4, h5, h6 {font-weight: 500;}
+a, a:hover {color: #4682fc; text-decoration: none; outline: 0; }
+ul, ul li{list-style:none; margin: 0; padding: 0;}
+p{margin: 0; padding: 0}
+.clearfix {*zoom: 1}
+.clearfix:after { content: ""; display: block; height: 0; clear: both; visibility: hidden }
+.clear {clear: both;}
+.clear1 {clear: both;height:1px}
+.clear5 {clear: both;height:5px}
+.clear10{clear: both;height:10px}
+.clear15{clear: both;height:15px}
+.clear20{clear: both;height:20px}
+.clear30{clear: both;height:30px}
+.clear40{clear: both;height:40px}
+.clear45{clear: both;height:45px}
+.clear50{clear: both;height:50px}
+.left{float: left}
+.right{float: right}
+.acenter {text-align: center}
+.aleft {text-align: left}
+.aright {text-align: right}
+.greyColor{color: #b0b0b0}
+.fontSize13{font-size: 13px;}
+.fontSize15{font-size: 15px;}
+.fontSize16{font-size: 16px;}
+.mr50{margin-right: 50px;}
+.mr0{margin-right: 0 !important; }
+.hide {display: none;}
+input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0px 1000px white inset;
+}
+
+/*login page*/
+.wallpaper{height: 100%; width: 100%; position: absolute; background-size:cover; background-position: center center;}
+/*.wallpaper:before {content: ""; width: 100%; height: 100%; position: absolute; background: rgba(0,0,0,.3) url(../images/pattern.png); opacity: .5; }*/
+.loginOuter{text-align: center; height: 100%; width: 100%; position: absolute;}
+.loginOuter:before {content: ''; display: inline-block; height: 100%; vertical-align: middle; }
+/*.loginOuter{position: absolute; right: 0; top: 0; bottom: 0; left: 0; text-align: center; height: 100%;}*/
+.loginOuter a{ font-size: 13px;}
+.loginOuter a:hover{color:#4285f4}
+.loginOuter .loginPopup{background: #fff; width: 400px; height: auto; margin: 0 auto; text-align: center;  border: 0 solid rgba(0,0,0,.15); box-shadow: 0 2px 10px rgba(0,0,0,.2); display: inline-block; vertical-align: middle; z-index: 9999; position: relative; z-index:1000;}
+.loginOuter .loginPopup .popupInner {padding:35px; }
+.loginOuter .loginPopup .gBlock { padding:20px 0; background-color: #eee; border-top: solid 1px rgba(0,0,0,.08);}
+.loginOuter .loginPopup .gBlock a {font-size: 14px; font-weight: 600; color: #333; text-decoration: underline;}
+.loginOuter .firstTimeLogin{background: #fff; width: 480px; height: auto; margin: 0 auto; padding:40px; text-align: center;  top: 50%; border: 1px solid rgba(0,0,0,.15); box-shadow: 0 2px 10px rgba(0,0,0,.2); display: inline-block; vertical-align: middle;}
+
+.loginOuter .compImg {max-width: 330px;/*height: 100px;*/ margin: 10px auto; display: block; overflow: hidden;}
+.loginOuter .compImg img{/*position: relative; top: 50%; -webkit-transform: translateY(-50%) translateZ(0); -ms-transform: translateY(-50%) translateZ(0); transform: translateY(-50%) translateZ(0);*/ }
+.loginOuter .compName {width: 100%; height: auto; max-height:150px; margin: 0 auto; display: block; overflow: visible; margin-bottom:10px; -webkit-align-items: center; -ms-flex-align: center; align-items: center; display: -webkit-flex; display: flex;}
+.loginOuter .compName span{width:100%; text-align: center; display: block; font-size: 36px;  font-weight: 600; line-height: 120%; position: relative;}
+.loginOuter h2{font-size: 23px; color: #626262; display: block; margin-bottom: 10px; font-weight: normal; }
+.loginOuter p{display: block; font-size: 14px; color: #626262; font-weight: normal; }
+.loginOuter .fields{display: block; margin-bottom: 10px; text-align: center;}
+.loginOuter .fields input[type="text"], .loginOuter .fields input[type="password"] {width: 100%; height: 40px; line-height: 40px; text-align: center; background-color:#fff; color: #000; border: 0; border-bottom: 1px solid #ddd; outline: none !important; font-size: 14px}
+.loginOuter .fields input[type="text"]:focus, .loginOuter .fields input[type="password"]:focus, .loginOuter .fields .submitBtn input[type="submit"]:hover{border-color: #4285f4 } 
+/*.loginOuter .fields input[type="submit"]*/
+.loginBtn{width: 101%; height: 45px; text-align: center; background-color:#4285f4; color: #fff; border-radius: 1px; border:1px solid #4285f4; outline: none !important; font-size: 14px; text-transform: uppercase; cursor: pointer; margin-top: 15px;}
+.errorMsg{display: block;height: 40px; color: #B60000; text-align: center; font-size: 14px; line-height: 25px; padding-top: 10px;}
+.errorMsg .fa{font-size: 18px;}
+
+/*.firstTimeLogin{position: relative; background: #fff; width: 480px; height: auto; margin: 0 auto; padding:40px; text-align: center; border-radius: 4px; top: 50%; -webkit-transform: translateY(-50%); -ms-transform: translateY(-50%); transform: translateY(-50%); box-shadow: 0px 0px 15px rgba(0,0,0,.25);}*/
+.firstTimeLogin .fieldOuter{margin: 0 auto; width: 325px;}
+.firstTimeLogin .note{display: block; font-size: 14px; color: #5E5E5E; line-height: 22px; margin-top: 30px;}
+.firstTimeLogin .note span{font-size: 16px; display: block;}
+.firstTimeLogin .note b{font-weight: 700; color: #000;}
+
+
+/*manage area login*/
+.topBar{height: 34px; padding:0 10px; position: absolute; top: 0; right: 0; left: 0; background: #4285f4; box-shadow: 0 0 3px rgba(0,0,0,.7); z-index:1000;}
+.topBar a{color:#fff;}
+.topBar .container {max-width: 1240px; margin: 0 auto;}
+.topBar .backBtn{font-size: 14px; color: #fff; float: left; line-height: 33px; }
+.idfferentAcc {position: absolute; bottom: -45px; width: 330px; text-align: center; }
+.userImg{width: 75px; height: 75px; overflow: hidden; border-radius: 50%; margin: 0 auto 10px auto; background: #dddddd}
+.userImg img {width:100%; height:100%;}
+.userInitials {width: 75px; height: 75px; overflow: hidden; border-radius: 50%; margin: 0 auto 10px auto; background: #eee;font-size: 40px; line-height: 73px;}
+.userInitials:before{ content: attr(data-name);}
+
+
+/* style added by ravneet for login screen*/
+.errorOuter{position: absolute; right: 0; top: 0; bottom: 0; left: 0; background: #f5f5f5; text-align: center; height: 100%; -webkit-align-items: center; -ms-flex-align: center; align-items: center; display: -webkit-flex; display: flex;}
+#loginErrorMsg{padding:20px 30px ;color:#222;font-size:13px; width: 350px; background-color: #fff; border: 1px solid #d0d0d0; box-shadow: 0 2px 10px rgba(0,0,0,.2);text-align: center; margin: 0 auto;  }
+#loginErrorMsg .fa{font-size: 40px; color: #E05252; margin-right: 0px; text-shadow: 0px 1px 1px #9A0000;}
+#loginErrorMsg a{color:#4682fc;}
+#loginErrorMsg h3{margin-bottom:20px; margin-top:25px; font-weight: 600;line-height: 23px;}
+#loginErrorMsgWrong{border:1px solid #e6c51f;margin:0 30px;padding:5px 0;background:#ffee96;color:#000;font-size:13px;line-height:20px;}
+
+body .themeOnOff{position:absolute;bottom:0;right:0;background:#333;color:#fff;padding:7px 12px;cursor:pointer;}
+body .themeOnOff:hover{background:#444;}
+
+.loginBtn.go:before{content: ""; display: inline-block; width: 14px; height: 14px; border-radius: 50%; border: 3px solid white; border-left-color: transparent; border-top-color: transparent; animation: loading 1s linear infinite; } @keyframes loading{0%{transform: rotate(0deg); } 100%{transform: rotate(360deg); } }
+
+
+@media (max-width: 640px){
+	.loginOuter:before{height: 0}
+	.loginOuter .firstTimeLogin {background: #fff; height: 100%; margin: 0 auto; padding:40px 0; width: 100%; text-align: center; border: 0;  display: block;}
+	.loginOuter .loginPopup{width: 100%; height: 100%;}
+	.firstTimeLogin .note {padding: 0 20px;}
+}
+

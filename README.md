@@ -1,2 +1,1 @@
-# MRMS
-Meeting Room Management System
+A payroll system is software which organizes all the tasks of employee payment and the filing of employee taxes. These tasks can include keeping tracking of hours, calculating wages, withholding taxes and deductions, printing and delivering checks and paying employment taxes to the government.

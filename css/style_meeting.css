@@ -1,0 +1,65 @@
+.width{
+    width: 100%;
+    line-height: 30px;
+}
+.width{
+    width: 100%;
+    line-height: 37px;
+    padding: 10px;
+}
+.margin-top{
+    margin-top: 12px;
+}
+button.btn.btn-primary.btn-center-get{
+    padding: 10px 30px;
+    border-radius: 12px;
+    background: none;
+    border: 3px solid #fff;
+    color: #fff;
+    margin: 0 auto;
+    display: block;
+}
+.bg-full {
+    background: #3D5869;
+    padding-bottom: 50px;
+}
+.bg-full{background:#3D5869;padding: 0 26px 20px 12px;}
+.bg-full h2{
+    color:#fff;
+    padding: 12px 0;
+    background: #153244;
+    margin-bottom: 52px;
+    font-size: 22px;
+    box-shadow: 0 1px 2px #fff inset;
+    border-radius: 12px;
+}
+.col-md-1 {
+    font-size: 25px;
+    color: #fff;
+}
+.bg-full input.form-control {
+    border-style: none;
+    border-radius: 0;
+    color: #fff;
+    padding: 20px 10px;
+    background: #153244;
+}
+
+input.form-control {
+}
+.bg-full label {
+    color: #fff;
+    font-size: 17px;
+    padding: 8px 0 0;
+}
+input#inputdefault {
+    color: white;
+    font-size: 15px;
+}
+input.form-control {
+    font-size: 15px;
+    color: #fff;
+}
+.modal-body{
+    padding: 0;
+}
