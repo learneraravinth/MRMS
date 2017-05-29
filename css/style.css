@@ -6355,8 +6355,17 @@ input[type=checkbox], input[type=radio] {
     font-size: 30px;
 }
 .btn-down{
-    padding: 10px 30px;
-    border-radius: 20px;
+    padding: 3px 35px;
+    border-radius: 17px;
     border:2px solid #fff;
     background: #2a3542;
+}
+
+.remos {
+    margin-bottom: 54px;
+    margin-top: 54px;
+}
+
+.col-lg-offset-2.col-lg-10.remoss {
+    padding-top: 36px;
 }

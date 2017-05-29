@@ -1,25 +1,27 @@
 <?php 
 $this->load->view('template/header_user');
  ?>
- 	
+ 	<link href="<?php echo base_url(); ?>css/bootstrap-datetimepicker.css" rel="stylesheet">
 	<link href='<?php echo base_url();  ?>fullcalendar/fullcalendar.css' rel='stylesheet' />
 	<link href='<?php echo base_url();  ?>fullcalendar/fullcalendar.print.css' rel='stylesheet' media='print' />
 	<script src='<?php echo base_url(); ?>fullcalendar/lib/moment.min.js'></script>
 	<script src='<?php echo base_url(); ?>fullcalendar/fullcalendar.min.js'></script>
+	<script src='<?php echo base_url(); ?>js/bootstrap-datetimepicker.js'></script>
 	<link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>css/font-awesome.min.css">
-		<link href='<?php echo base_url();  ?>css/style_meeting.css' rel='stylesheet' />
-		 
+	<link href='<?php echo base_url();  ?>css/style_meeting.css' rel='stylesheet' />
+		 <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css" rel="stylesheet">
 <style>
 
-</style>
+
 .modal-body {
     position: relative;
     padding: 26px;
 }
-
+.datetimepicker5{ z-index:1151 !important;}
 .fc-unthemed .fc-today !impartant{
     background: #ffffff;
 }
+</style>
 <script>
 
 var baseUrl	='<?php echo base_url();?>';
@@ -32,11 +34,20 @@ var day		='<?php echo date('Y-m-d');?>';
 			var y = date.getFullYear();
 		});
   </script> 
+  <script type="text/javascript">
+ 	$(function () {	
+		$('.datetimepicker5').datetimepicker({
+		
+		})
+		.on('changeDate', function(ev){                 
+				$('.datetimepicker5').datetimepicker('hide');
+		});
+	});
+</script>
   <body>
   	<?php $this->load->view('template/sidebar_user'); ?>
       <!--sidebar end-->
       <!--main content start-->
-	  
 		<section id="main-content">
 			<section class="wrapper">
               <!--state overview start-->
@@ -44,7 +55,6 @@ var day		='<?php echo date('Y-m-d');?>';
 					<div class="col-lg-6 col-sm-8 bg height-a">
 						<section class="panel bg">
 							<div class="container">
-							
 								<div class="row">
 									<div id="carousel-example-generic" class="carousel slide width" data-ride="carousel">
 									  <!-- Indicators -->
@@ -67,7 +77,7 @@ var day		='<?php echo date('Y-m-d');?>';
 												<input type="button" name="Extend" onclick ="end_meeting()" value="End" class="btn-default btn-down btnclr">
 											</div>	
 											<div class="col-md-6 center">
-												<input type="button" name="End" value="Extend" class="btn-default btn-down btnclr">
+												<input type="button" name="End" value="Extend" class="btn-default btn-down btnclr" onclick ="ex_meeting()" >
 											</div>	
 										</div>
 										
@@ -114,7 +124,7 @@ var day		='<?php echo date('Y-m-d');?>';
 							 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
 								<div class="row">
 							<div class="col-md-12 bg-full">
-								<h2 class="text-center">Add New Meeting</h2>
+								<h2 class="text-center"><div id="remos">Add New Meeting</div></h2>
 								<div class="row margin-top">
 									<div class="col-md-1">
 										<i class="fa fa-building-o" aria-hidden="true"></i>
@@ -138,7 +148,7 @@ var day		='<?php echo date('Y-m-d');?>';
 									<div class="col-md-5">
 										<div class="form-group">
 											<div class="input-group date form_time">
-												<input class="form-control datepicker9"  id="start_dt" name="start_dt" size="16" type="text" value="" disabled placeholder="Start Date">
+												<input class="form-control datetimepicker5"  id="start_dt" name="start_dt" size="16" type="text" value="" disabled placeholder="Start Date">
 												<span class="input-group-addon">
 												<span class="fa-clock-o"></span>
 												</span>
@@ -150,7 +160,7 @@ var day		='<?php echo date('Y-m-d');?>';
 									</div>
 									<div class="form-group">
 										<div class="input-group date form_time col-md-5">
-											<input class="form-control datepicker9" size="16" type="text" id="end_dt" name="end_dt" value="" disabled placeholder="End Date">
+											<input class="form-control datetimepicker5" size="16" type="text" id="end_dt" name="end_dt" value="" disabled placeholder="End Date">
 											<span class="input-group-addon"><span class="fa-clock-o"></span></span>
 										</div>
 									</div>
@@ -285,7 +295,7 @@ var day		='<?php echo date('Y-m-d');?>';
 	<script>
 		$(document).ready(function(){
 			$('.datepicker9').datepicker({
-								format: "yyyy/mm/dd",
+				format: "yyyy/mm/dd",
 			})
 			.on('changeDate', function(ev){                 
 				$('.datepicker9').datepicker('hide');
@@ -379,6 +389,35 @@ var day		='<?php echo date('Y-m-d');?>';
 				alert(textStatus);
 			});			
 		}
+		
+		function ex_meeting(){
+			$("#remos").text("");
+			$("#remos").text("Extend Meeting");
+			$("#end_dt").prop("disabled", false);
+			$("#myModal").modal();
+		}
+		function extend_meeting(){
+			var filename = baseUrl+'dashboard_user/extend_meeting';
+			var request  = $.ajax({
+				url  : filename,
+				type : "POST",
+				data : {       
+					room_id     : $("#room_id").val(),		
+					startdate   : $("#from_date").val(), 		
+					enddate     : $("#to_date").val(), 		
+				},
+				dataType : "html"
+			});
+			
+			request.done(function(result){   
+				var output    = jQuery.parseJSON(result);
+				location.reload();
+			});
+			
+			request.fail(function(jqXHR,textStatus){
+				alert(textStatus);
+			});			
+		}
 
 		function calendar_show(){
 			var room_id = $("#room_id").val();
@@ -400,6 +439,15 @@ var day		='<?php echo date('Y-m-d');?>';
 					}else{
 						$("#show_booked").show();
 					}
+					$("#from_date").val(output.strdate);
+					$("#to_date").val(output.strdate);
+					$("#meeting_title").val(output.stitle);
+					$("#meeting_agenda").val(output.sagenda);
+					$("#send_by").val(output.send_by);
+					$("#room_invities").val(output.grp_user);
+					
+					$("#start_dt").val(output.strdate);
+					$("#end_dt").val(output.enddate);
 					choose_sendby();
 					$("#show_val_"+room_id).append(output.status);
 					$('#calendar').fullCalendar('destroy');
@@ -415,6 +463,9 @@ var day		='<?php echo date('Y-m-d');?>';
 						defaultView: 'basicDay',
 						selectable: true,
 						selectHelper: true,
+						slotDuration: '00:15:00',
+						slotLabelInterval: 15,
+						slotLabelFormat: 'h(:mm)a',
 						selectOverlap: function(event) {
 							return event.rendering === 'background';
 						},
@@ -441,7 +492,8 @@ var day		='<?php echo date('Y-m-d');?>';
 						{
 							var start1	 = start.format("YYYY-MM-DD HH:mm:ss");
 							var end1	 = end.format("YYYY-MM-DD HH:mm:ss");
-							  
+							 $("#remos").text("");
+							$("#remos").text("Add New Meeting"); 
 							$("#from_date").val("");
 							$("#from_date").val(start1);
 							$("#start_dt").val(start1);
@@ -450,7 +502,6 @@ var day		='<?php echo date('Y-m-d');?>';
 							$("#to_date").val(end1);
 							var str = $("#hid_flag").val();
 							if(str!=1){
-								
 								$("#myModal").modal();
 							}
 							if (title)

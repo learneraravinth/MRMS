@@ -24,11 +24,25 @@ class Dashboard_user extends CI_Controller {
 		$day_booking  	= $this->meeting_model->today_booking($room_id); 
 		$room_details   = $this->meeting_model->booking_details($room_id); 
 		$today_rslt 	= $day_booking->result_array();
+		//echo "<pre>";print_r($today_rslt);exit;
 		if($day_booking->num_rows() > 0){
-			$ctrldata['status'] = 'Booked';
+			$ctrldata['status']   = 'Booked';
+			$ctrldata['strdate']  =  $day_booking->row()->start_date;
+			$ctrldata['enddate']  = $day_booking->row()->end_date;
+			$ctrldata['stitle']   = $day_booking->row()->title;
+			$ctrldata['sagenda']  = $day_booking->row()->agenda;
+			$ctrldata['send_by']  = $day_booking->row()->send_by;
+			$ctrldata['grp_user'] = $day_booking->row()->invities;
 		}else{
-			$ctrldata['status'] = 'Available';
+			$ctrldata['strdate']  = "";
+			$ctrldata['enddate']  = "";
+			$ctrldata['stitle']   = "";
+			$ctrldata['sagenda']  = "";
+			$ctrldata['send_by']  = "";
+			$ctrldata['grp_user'] = "";
+			$ctrldata['status']   = 'Available';
 		}
+		
 		$data_rslt 	    = $room_details->result_array();
 		$event_array    = array();
         foreach($data_rslt as $record ){
@@ -39,6 +53,12 @@ class Dashboard_user extends CI_Controller {
             );
         }
 		$ctrldata['event_array'] = $event_array;
+		echo json_encode($ctrldata);
+	}
+	
+	public function extend_meeting(){
+		$data 	= $this->input->post();
+		$ctrldata = $this->meeting_model->extend_meeting($data);
 		echo json_encode($ctrldata);
 	}
 	

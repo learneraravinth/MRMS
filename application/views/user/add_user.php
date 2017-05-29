@@ -11,6 +11,7 @@ $this->load->view('template/header'); ?>
 	color : red;
 }
 </style>
+
   <body>
   	<?php $this->load->view('template/sidebar'); ?>
       <!--sidebar end-->
@@ -55,11 +56,11 @@ $this->load->view('template/header'); ?>
 								</div>
 							</div>
 							</form>
-							<div class="form-group">
+							<div class="form-group remos">
 								<label class="control-label col-md-3">User Photo</label>
 								<form enctype="multipart/form-data" id= "admin_photofrm" name="admin_photofrm" class= "form-horizontal tasi-form">
 									<div class="col-md-4">
-										<input type="file" class="default" id="user_photo" name="user_photo" onchange="auto_upload_photo('user_photo');">
+										<input type="file" class="defaults" id="user_photo" name="user_photo" onchange="auto_upload_photo('user_photo');">
 										<input type="hidden" id="user_photo_name" name="user_photo_name" value="">
 									</div>
 								</form> 
@@ -68,7 +69,7 @@ $this->load->view('template/header'); ?>
 								</div>
 							</div>
 							<input type="hidden" id="user_id" name="user_id" value="">
-							<div class="col-lg-offset-2 col-lg-10">
+							<div class="col-lg-offset-2 col-lg-10 remoss">
 							  <button class="btn btn-danger" type="button" onclick="save_users()">Save</button>
 							  <button class="btn btn-default" onclick="clear_fields()"  type="button">Clear</button>
 							</div>

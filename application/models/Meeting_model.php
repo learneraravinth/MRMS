@@ -12,18 +12,20 @@ class meeting_model extends CI_Model {
 		$query  = "SELECT rm.*,rf.room_name as name_of_room FROM ".$room_id."_details as rm left join  room_info  as rf on rf.id = rm.room_name WHERE date(start_date) = '".$today."'";
 		return $rs 	= $this->db->query($query);
 	}
+	
 	public function list_group(){
 		$query  = 'SELECT * FROM group_info WHERE is_active=1';
 		$rs 	= $this->db->query($query);
 		return $rs->result();
 	}
+	
 	//Get Amenities
 	public function get_amenities(){
 		$query  = 'SELECT id,amenities_name FROM amenities WHERE is_active=1';
 		$rs 	= $this->db->query($query);
 		return $rs->result();
 	}	
-	
+	//Get Users
 	public function get_users(){
 		$query  = 'SELECT * FROM users WHERE is_active=1';
 		$rs 	= $this->db->query($query);
@@ -59,13 +61,19 @@ class meeting_model extends CI_Model {
 		$end_id = $rs->row()->id;
 		$this->db->set('end_date',$today);
 		$this->db->where('id',$end_id);
-		
 		$this->db->update($room_id.'_details');
 		$modeldata['msg']= 'Successfully save!';
 		$modeldata['flag']=1;
-		return $modeldata;
-		
+		return $modeldata;	
 	}
+	
+	public function extend_meeting($userdata){
+		$room_id 	= $userdata['room_id'];
+		$startdate  = $userdata['startdate'];
+		$enddate 	= $userdata['enddate'];
+		$query 		= 'SELECT id FROM '.$room_id.'_details WHERE start_date='.$startdate.' AND  end_date = '.$enddate;
+	} 
+	
 	public function save_amenities($userdata){
 		$query  = 'select amenities_name from amenities where amenities_name="'.$userdata['amenities_name'].'"';
 		$rs 	= $this->db->query($query);

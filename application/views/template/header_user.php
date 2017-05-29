@@ -37,19 +37,14 @@
     <link href="<?php echo base_url(); ?>css/bootstrap-reset.css" rel="stylesheet">
     <!--external css-->
     <link href="<?php echo base_url(); ?>css/font-awesome.css" rel="stylesheet" />
-   
-    <link href="<?php echo base_url(); ?>css/demo_page.css" rel="stylesheet" />
-	
-	 <link href="<?php echo base_url(); ?>css/demo_table.css" rel="stylesheet" />
-	 
-    <link href="<?php echo base_url(); ?>css/DT_bootstrap.css" rel="stylesheet" />
-	
+  
     <link rel="stylesheet" href="<?php echo base_url(); ?>css/owl.carousel.css" type="text/css">
 	
 	<link href="<?php echo base_url(); ?>css/sweetalert.css" rel="stylesheet">
     <!--right slidebar-->
     <link href="<?php echo base_url(); ?>css/slidebars.css" rel="stylesheet">
     <link href="<?php echo base_url(); ?>css/retina.min.css" rel="stylesheet">
+   
 
     <!-- Custom styles for this template -->
 
@@ -64,15 +59,9 @@
 	<script type='text/javascript' src='<?php echo base_url(); ?>js/accodianyy.js'></script>
 	<script src="<?php echo base_url(); ?>js/sweetalert.min.js"></script>
 	<script src="<?php echo base_url(); ?>js/bootstrap.min.js"></script>
-	<!---<script src="<?php echo base_url(); ?>js/jquery.scrollTo.min.js"></script>--->
-	<!--right slidebar-->
 	<script src="<?php echo base_url(); ?>js/slidebars.min.js"></script>
 	<script src="<?php echo base_url(); ?>js/bootstrap-datepicker.js"></script>
-	<!--<script src="<?php echo base_url(); ?>js/jquery.dcjqaccordion.2.7.js"></script>
-	<script src="<?php echo base_url(); ?>js/respond.min.js"></script>--->
-	<script src="<?php echo base_url(); ?>js/jquery.dataTables.js"></script>
-	<script src="<?php echo base_url(); ?>js/DT_bootstrap.js"></script>
-	<script src="<?php echo base_url(); ?>js/dynamic_table_init.js"></script>
+
 	<script>
 	var baseUrl='<?php echo base_url();?>';
 	</script>
@@ -80,9 +69,8 @@
 	<script src="<?php echo base_url(); ?>js/uploadfiles.js"></script>
 	<script src="<?php echo base_url(); ?>js/jquery.validate.js"></script>
 	<script src="<?php echo base_url(); ?>js/select2.min.js"></script>
-	<script type="text/javascript" src="<?php echo base_url(); ?>js/chart/jquery.canvasjs.min.js"></script>  
 	<script src="<?php echo base_url(); ?>js/common-scripts.js"></script>
-	<script src="<?php echo base_url(); ?>js/jquery.timepicker.js"></script>
+
   </head>
  
     <header class="header white-bg">

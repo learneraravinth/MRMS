@@ -59,7 +59,7 @@ $this->load->view('template/header_user');
 								  </div>
 							</div>
 						</form>
-						<div class="form-group">
+						<div class="form-group remos">
 							<label class="control-label col-md-3">User Photo</label>
 							<form enctype="multipart/form-data" id= "admin_photofrm1" name="admin_photofrm1" class= "form-horizontal tasi-form">
 								<div class="col-md-4">
